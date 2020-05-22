@@ -5,10 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import ButtonsArray from "./ButtonsArray";
 const useStyles = makeStyles((theme) => ({
   button: {
-    fontSize: "20px",
+    minWidth: "50px",
   },
   grid: {
-    width: "70%",
+    width: "auto",
   },
 }));
 const Buttons = (props) => {
@@ -68,26 +68,28 @@ const Buttons = (props) => {
       alignItems="center"
       spacing={2}
     >
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center"
-        spacing={2}
-        className={classes.grid}
-      >
-        {ButtonsArray.map((btn, index) => (
-          <Grid item xs={3} key={index}>
-            <Button
-              onClick={onClickButton(btn.symbol)}
-              className={classes.button}
-              variant={btn.variant}
-              color={btn.color}
-            >
-              {btn.name}
-            </Button>
-          </Grid>
-        ))}
+      <Grid item xs={12} sm={12} md={6} lg={6}>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+          spacing={1}
+          className={classes.grid}
+        >
+          {ButtonsArray.map((btn, index) => (
+            <Grid item xs={3} key={index}>
+              <Button
+                onClick={onClickButton(btn.symbol)}
+                className={classes.button}
+                variant={btn.variant}
+                color={btn.color}
+              >
+                {btn.name}
+              </Button>
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </Grid>
   );

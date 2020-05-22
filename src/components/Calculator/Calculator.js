@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
-
+//import child components for calculator
 import Result from "./Result";
 import Buttons from "./Buttons";
 
@@ -22,6 +22,7 @@ const Calculator = (props) => {
   const [result, setResult] = useState("0");
 
   useEffect(() => {
+    //set initialValue from prop   
     if (props.initialValue) {
       setResult(props.initialValue);
     }
