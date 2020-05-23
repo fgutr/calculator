@@ -26,7 +26,7 @@ const Buttons = (props) => {
         break;
       default:
         if (props.result === "0") {
-          props.setResult(String(prop));
+          props.setResult(parseInt(prop));
         } else {
           props.setResult(props.result + prop);
         }
@@ -45,7 +45,7 @@ const Buttons = (props) => {
     try {
       props.setResult(
         // eslint-disable-next-line
-        (eval(checkResult) || "") + ""
+        (eval(checkResult).toString() || "") + ""
       );
     } catch (e) {
       props.setResult("error");
